@@ -5,8 +5,9 @@ import React, { useState, useRef, useEffect } from 'react';
 // use useEffect hook
 import TaskList from './TaskList'
 import { v4 as uuidv4 } from 'uuid';
+import { toUnicode } from 'punycode';
 // uuid is used to generate random ID's for tasks, used as a function within the prevTasks object
-// using 'import uuidv4 from 'uuid/v4' didn't work so found a fix (above)
+// using 'import uuidv4 from 'uuid/v4' gave an ERROE so I found a fix (above)
 
 // this sets a local storage variable key
 const LOCAL_STORAGE_KEY = 'taskApp.tasks'
@@ -36,7 +37,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks))
   }, [tasks])
-  // this functions allows us to store the tasks inside local storage...
+  // this functions allows us to store the tasks inside local storage...s
   // ...remember to set the local_storage_key variable outside the function
 
   function toggleTask(id) {
@@ -57,14 +58,20 @@ function App() {
     taskNameRef.current.value = null
 
   }
+
+  function handleClearTasks() {
+    const newTasks = tasks.filter(task => !task.complete)
+    setTasks(newTasks)
+  }
+
   return (
     <>
       <TaskList tasks={tasks} toggleTask={toggleTask} />
       <input ref={taskNameRef} type="text" />
       <button onClick={addNewTask}>+</button>
       <button>-</button>
-      <button>Clear Completed</button>
-      <div>0 left to do</div>
+      <button onClick={handleClearTasks}>Clear Completed</button>
+      <div> {tasks.filter(task => !task.complete).length}left to do</div>
     </>
   )
 }
@@ -74,4 +81,3 @@ function App() {
 // for todos you create a component (Todo.js)  
 
 export default App;
-
