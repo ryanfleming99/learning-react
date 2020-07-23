@@ -5,7 +5,9 @@ import React, { useState, useRef, useEffect } from 'react';
 // use useEffect hook
 import TaskList from './TaskList'
 import { v4 as uuidv4 } from 'uuid';
+import { styles } from "./styles";
 import { toUnicode } from 'punycode';
+import { blue } from 'color-name';
 // uuid is used to generate random ID's for tasks, used as a function within the prevTasks object
 // using 'import uuidv4 from 'uuid/v4' gave an ERROE so I found a fix (above)
 
@@ -70,7 +72,7 @@ function App() {
       <input ref={taskNameRef} type="text" />
       <button onClick={addNewTask}>+</button>
       <button>-</button>
-      <button onClick={handleClearTasks}>Clear Completed</button>
+      <button onClick={handleClearTasks}> Clear Completed</button>
       <div> {tasks.filter(task => !task.complete).length}left to do</div>
     </>
   )
