@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 // use useEffect hook
 import TaskList from './TaskList'
 import { v4 as uuidv4 } from 'uuid';
-import { styles } from "./styles";
+import "./App.scss";
 import { toUnicode } from 'punycode';
 import { blue } from 'color-name';
 // uuid is used to generate random ID's for tasks, used as a function within the prevTasks object
