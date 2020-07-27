@@ -1,5 +1,9 @@
 import React from 'react'
-import './App.scss';
+import styled from 'styled-components';
+import StyledTask from './components/StyledTask'
+
+/* const StyledTask = styled.div`
+`; */
 
 export default function TaskList({ task, toggleTask }) {
     function handleTaskClick() {
@@ -10,9 +14,11 @@ export default function TaskList({ task, toggleTask }) {
     // imported task above in the function params
     // using checked={task.complete} to determine when input has been reacted with
     return (
-        <label>
-            <input type="checkbox" checked={task.complete} onChange={handleTaskClick} />
-            {task.name}
-        </label>
+        <StyledTask>
+            <label>
+                <input type="checkbox" checked={task.complete} onChange={handleTaskClick} />
+                <p>{task.name}</p>
+            </label>
+        </StyledTask>
     )
 }
