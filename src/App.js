@@ -4,6 +4,10 @@ import React, { useState, useRef, useEffect } from 'react';
 // use useRef to allow reading the input box
 // use useEffect hook
 import TaskList from './TaskList'
+import StyledLayout from './components/StyledLayout'
+import StyledButton from './components/StyledButton'
+
+
 import { v4 as uuidv4 } from 'uuid';
 import { toUnicode } from 'punycode';
 import styled from 'styled-components';
@@ -80,11 +84,14 @@ function App() {
   return (
     <>
       <TaskList tasks={tasks} toggleTask={toggleTask} />
-      <input ref={taskNameRef} type="text" />
-      <button onClick={addNewTask}>+</button>
-      <button>-</button>
-      <button onClick={handleClearTasks}> Clear Completed</button>
-      <div> {tasks.filter(task => !task.complete).length}left to do</div>
+      <StyledLayout>
+        <StyledButton>
+          <input ref={taskNameRef} type="text" />
+          <button onClick={addNewTask}>+</button>
+          <button onClick={handleClearTasks}> Clear Completed</button>
+        </StyledButton>
+        <div> {tasks.filter(task => !task.complete).length}left to do</div>
+      </StyledLayout>
     </>
   )
 }
