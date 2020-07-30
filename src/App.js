@@ -6,6 +6,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import TaskList from './TaskList'
 import StyledLayout from './components/StyledLayout'
 import StyledButton from './components/StyledButton'
+import InputBox from './components/InputBox'
 
 
 import { v4 as uuidv4 } from 'uuid';
@@ -83,14 +84,12 @@ function App() {
 
   return (
     <>
-      <TaskList tasks={tasks} toggleTask={toggleTask} />
       <StyledLayout>
-        <StyledButton>
-          <input ref={taskNameRef} type="text" />
-          <button onClick={addNewTask}>+</button>
-          <button onClick={handleClearTasks}> Clear Completed</button>
-        </StyledButton>
-        <div> {tasks.filter(task => !task.complete).length}left to do</div>
+        <TaskList tasks={tasks} toggleTask={toggleTask} />
+        <InputBox ref={taskNameRef} type="text" />
+        <StyledButton onClick={addNewTask}>+</StyledButton>
+        <StyledButton onClick={handleClearTasks}> Clear Completed</StyledButton>
+        <p>{tasks.filter(task => !task.complete).length}left to do</p>
       </StyledLayout>
     </>
   )

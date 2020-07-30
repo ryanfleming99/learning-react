@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const StyledLayout = styled.div`
-    display:grid;
-    padding:10px;
-    font-size:20px;
+   width:100%;
+   max-width:768px;
+   display:grid;
+   text-align: center;
 `;
 export default StyledLayout;
