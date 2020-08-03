@@ -81,9 +81,7 @@ function App() {
   return (
     <>
       <StyledLayout>
-        <ol>
-          <TaskList tasks={tasks} toggleTask={toggleTask} />
-        </ol>
+        <TaskList tasks={tasks} toggleTask={toggleTask} />
         <InputBox ref={taskNameRef} type="text" />
         <StyledButton onClick={addNewTask}>+</StyledButton>
         <StyledButton onClick={handleClearTasks}> Clear Completed</StyledButton>

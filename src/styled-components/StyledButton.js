@@ -8,7 +8,9 @@ const StyledButton = styled.button`
   border: 1px solid lightgray;
   background-color: lightgray;
   border-radius: 20px;
-  width: 50%;
+  width: 200px;
+  height: 20px;
+  justify-content: center;
 `;
 
 export default StyledButton;

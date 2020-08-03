@@ -5,7 +5,7 @@ function TaskCounter({ tasks }) {
   return (
     <div>
       <Counter>
-        {tasks.filter(task => !task.complete).length} left to do
+        {tasks.filter(task => !task.complete).length} to complete today
       </Counter>
     </div>
   );
