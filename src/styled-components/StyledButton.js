@@ -4,13 +4,15 @@ const StyledButton = styled.button`
   color: white;
   margin: 10px;
   text-align: center;
-  padding: 0.25em 1em;
+  padding: 15px;
   border: 1px solid lightgray;
   background-color: lightgray;
   border-radius: 20px;
   width: 200px;
   height: 20px;
   justify-content: center;
+  display: flex;
+  align-items: center;
 `;
 
 export default StyledButton;
