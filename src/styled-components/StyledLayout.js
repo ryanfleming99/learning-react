@@ -6,5 +6,7 @@ const StyledLayout = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: 50px;
+  padding: 50px;
+  background-color: #fffffe;
 `;
 export default StyledLayout;

@@ -5,14 +5,18 @@ const StyledButton = styled.button`
   margin: 10px;
   text-align: center;
   padding: 15px;
-  border: 1px solid lightgray;
-  background-color: lightgray;
+  border: 1px solid #3698e2;
+  background-color: #3698e2;
   border-radius: 20px;
   width: 200px;
   height: 20px;
   justify-content: center;
   display: flex;
   align-items: center;
+
+  :hover {
+    background-color: #3da9fc;
+  }
 `;
 
 export default StyledButton;
