@@ -6,6 +6,11 @@ const Title = styled.div`
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding: 40px 0px;
+  color: #3698e2;
+
+  :hover {
+    color: #3da9fc;
+  }
 `;
 
 export default Title;
