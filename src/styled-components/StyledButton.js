@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  color: white;
+  color: rgb(107, 189, 236);
   margin: 10px;
   text-align: center;
   padding: 15px;
-  border: 1px solid lightgray;
-  background-color: lightgray;
+  border: 1px solid white;
+  background-color: white;
   border-radius: 20px;
   width: 200px;
   height: 20px;

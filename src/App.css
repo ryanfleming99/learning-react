@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(107, 189, 236);
+  position: relative;
+  top: -50px;
+}
+
+.spacing {
+  margin-top: 100px;
+}

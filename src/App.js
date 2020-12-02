@@ -13,7 +13,7 @@ import Counter from "./styled-components/Counter";
 import { v4 as uuidv4 } from "uuid";
 import StyledTask from "./styled-components/StyledTask";
 // uuid is used to generate random ID's for tasks, used as a function within the prevTasks object
-// using 'import uuidv4 from 'uuid/v4' gave an ERROE so I found a fix (above)
+// using 'import uuidv4 from 'uuid/v4' gave an ERROR so I found a fix (use v4 as uuidv4 instead)
 // 'styled-components' is a create-a-component library which allows powerful css styling
 
 /* const StyledDiv = styled.div`
@@ -81,6 +81,7 @@ function App() {
   return (
     <>
       <StyledLayout>
+        <div class="spacing"></div>
         <TaskList tasks={tasks} toggleTask={toggleTask} />
         <InputBox ref={taskNameRef} type="text" />
         <StyledButton onClick={addNewTask}>+</StyledButton>
